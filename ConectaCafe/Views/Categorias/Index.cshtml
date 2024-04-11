@@ -1,5 +1,4 @@
 @model IEnumerable<ConectaCafe.Models.Categoria>
-
 @{
     ViewData["Title"] = "Categorias";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -59,6 +58,16 @@
 @section Scripts 
 {
     <script>
-        let datatable = new DataTable('#dataTable');
+        let datatable = new DataTable('#dataTable', {
+            language: {
+                url:'https://cdn.datatables.net/plug-ins/2.0.3/i18n/pt-BR.json'
+            },
+            initComplete: function (settings, json){
+                document.querySelector('.dt-lenght').classList.add('text-xs');
+                document.querySelector('.dt-search').classList.add('text-xs');
+                document.querySelector('.dt-info').classList.add('text-xs');
+                document.querySelector('.dt-paging').classList.add('text-xs');
+            }
+        });
     </script>
 }
