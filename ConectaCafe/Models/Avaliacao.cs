@@ -10,7 +10,7 @@ public class Avaliacao
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
-    [Display(Name = "Nome")]
+    [Display(Name = "Pessoa")]
     [StringLength(60)]
     [Required(ErrorMessage = "Por favor, insira um nome")]
     public string Pessoa { get; set; }   
